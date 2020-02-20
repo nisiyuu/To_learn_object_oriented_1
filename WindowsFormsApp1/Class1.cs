@@ -8,7 +8,7 @@ namespace WindowsFormsApp1
     {
         ///
         public Class1(){}
-        public Class1(int num){　//自作のインストラクタ　Class1型のインスタンス
+        public Class1(int num){　//自作コンストラクタ　コンストラクタは戻り値を持たない
             this.test = num;
         }
         /// <summary>
@@ -19,7 +19,7 @@ namespace WindowsFormsApp1
         {
             this.str = str;
         }
-        private string str = "おはよう";//組み込み　int型のインスタンス変数
+        private string str = "おはよう";//組み込み　int型のインスタンス変数(フィールド）
         private int test = 1;//組み込み　int型のインスタンス変数
         public const int test2 = 2;
         public int showTest()　//組み込み　int型のインスタンスメソッド
@@ -35,17 +35,17 @@ namespace WindowsFormsApp1
 }
 
 
-//publicとprivate publicであればどこからでも参照できる＆privateだと同じクラス内でしか参照できない
-//Form1.csからprivateのtestを呼び出すには、例えばpublicのshowTestで囲んであげることで可能
+//publicとprivate publicであればインスタンスから参照できる＆privateだと同じクラス内でしか参照できない
+//Form1.csからprivateのtestを呼び出すには、例えばpublicのshowTest（メソッド）で囲んであげることで可能
 
 //同じコンストラクタ名でいくつか種類がつくれる シグネチャが異なる
 //引数なしのインスタンスと・・・A
 //int型引数をもつインスタンスなど・・・B
 
 //BはAの機能+int型引数を活用した機能
-//これがオーバーライド
+//これがオーバーロード。複数のシグニチャをもつことができる。
 
-//参照型のほとんどはobject型これを継承してstring型になったりする
+//クラス型なら全てobject型これを継承してstring型になったりする。※参照型にはインターフェイス型もある
 //https://docs.microsoft.com/ja-jp/dotnet/api/system.string?view=netframework-4.8#methods
 //https://docs.microsoft.com/ja-jp/dotnet/api/system.object?view=netframework-4.8
 //くらすが継承されていることがわかる
